@@ -19,17 +19,17 @@ def getReadme():
     # Using readlines() 
     file1 = open('nplop', 'r') 
     Lines = file1.readlines() 
-    print("# Podcasts Histoire :")
+    #print("# Podcasts Histoire :")
     # Strips the newline character 
     for line in Lines: 
         lineStrip = line.strip()
-        title=lineStrip[lineStrip.find("histoire")+9:lineStrip.find(".mp3?")]
+        title=lineStrip[lineStrip.find("icones")+7:lineStrip.find(".mp3?")]
         title=title.replace("-"," ")
         link = lineStrip[lineStrip.find("http"):-1]
-        #if(lineStrip.find("histoire")>0):
-        linksList.append(lineStrip)
-        #print("## "+title+" :")
-        print("## ["+title+"]"+"("+link+")")
+        if(lineStrip.find("icone")>0):
+            linksList.append(lineStrip)
+            #print("## "+title+" :")
+            print("## ["+title+"]"+"("+link+")")
 
 
 def getJson():
